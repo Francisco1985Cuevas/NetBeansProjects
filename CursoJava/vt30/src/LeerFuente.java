@@ -6,19 +6,28 @@ public class LeerFuente {
     public static void main(String[] arguments) {
         
         try {
-            //creamos un objeto FileReader y lo asociamos con un archivo fuente
+            //repetimos en proceso, en este caso streams de entrada.
+            
+            //creamos un objeto FileReader y lo asociamos con un 
+            //archivo fuente.
             FileReader archivo = new FileReader("src\\LeerFuente.java");
-            //creamos un filtro buffer que asociamos con la fuente de entrada
+            
+            //creamos un filtro buffer que asociamos con la 
+            //fuente de entrada, que acabamos de crear y al que
+            //llamamos archivo
             BufferedReader buff = new BufferedReader(archivo);
             
             boolean eof = false;
-            while (!eof) {
-                String linea = buff.readLine();
-                if (linea == null)
+            while (!eof) {//mientras no sea fin de archivo
+                String linea = buff.readLine();//lee linea a linea del archivo fuente
+                if (linea == null){
                     eof = true;
-                else
+                }else{
                     System.out.println(linea);
+                }
             }
+            
+            //metodo close
             buff.close();
         } catch (IOException e) {
             System.out.println("Error -- " + e.toString());
@@ -27,3 +36,5 @@ public class LeerFuente {
     }
     
 }
+//lectura de archivo.
+//vamos a hacer que el programa se lea asimismo.
