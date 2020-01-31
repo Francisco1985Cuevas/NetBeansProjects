@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>PersonaController</servlet-name>
+        <servlet-class>controllers.PersonaController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AgregarController</servlet-name>
+        <servlet-class>controllers.AgregarController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AgregarPost</servlet-name>
+        <servlet-class>controllers.AgregarPost</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PersonaController</servlet-name>
+        <url-pattern>/personacontroller</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AgregarController</servlet-name>
+        <url-pattern>/agregarcontroller</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AgregarPost</servlet-name>
+        <url-pattern>/agregarpost</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+</web-app>
