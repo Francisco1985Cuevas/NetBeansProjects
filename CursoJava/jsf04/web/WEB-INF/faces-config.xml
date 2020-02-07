@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+
+    <navigation-rule>
+        <from-view-id>
+            /dinamica.xhtml
+        </from-view-id>
+        
+        <navigation-case>
+            <from-outcome>page1</from-outcome>
+            <to-view-id>/pagina1.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>page2</from-outcome>
+            <to-view-id>/pagina2.xhtml</to-view-id>
+        </navigation-case>
+        
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/index.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>buenos-dias</from-outcome>
+            <to-view-id>/saludo_dia.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>buenas-tardes</from-outcome>
+            <to-view-id>/saludo_tarde.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>buenas-noches</from-outcome>
+            <to-view-id>/saludo_noche.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    
+    <managed-bean>
+        <managed-bean-name>navegacionBean</managed-bean-name>
+        <managed-bean-class>bean.NavegacionBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+</faces-config>
