@@ -2,6 +2,8 @@
     Document   : index
     Created on : 08/01/2020, 10:40:31 AM
     Author     : francisco
+    Description: este archivo carga nuestro proyecto
+
 este archivo actua como view
 --%>
 
@@ -13,7 +15,7 @@ este archivo actua como view
         <title>Ejemplo de EJB</title>
     </head>
     <body>
-        <h1>Ejemplo de EJB</h1>
+        <h1>Ejemplo de Enterprise Java Bean(EJB)</h1>
         
         
         <!-- importamos o creamos los Beans -->

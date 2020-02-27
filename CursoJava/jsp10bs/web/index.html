@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+Creación de un Web Service(Servidor/Server) SOAP Paso a paso.
+
+- Primer paso, crear un nuevo Proyecto Web.
+
+- Segundo paso, crear un nuevo Paquete "ws", dentro de este Paquete 
+vamos a guardar nuestro Web Service.
+
+- Tercer paso, vamos a crear un nuevo Web Service(Servidor), le 
+damos un nombre y lo guardamos dentro del nuevo paquete que 
+acabamos de crear.
+Podemos hacer muchas cosas dentro de este proyecto, pero si lo 
+vamos a utilizar como Proyecto de tipo Web Service... lo recomendado 
+es que no se cree nada mas dentro de ese proyecto... y solamente lo 
+utilicemos para que sea solo eso.. un Proyecto de tipo Web Service.
+Cuando se crea el Web Service se crea simplemente una Clase con el 
+nombre que le dimos.
+La notacion @WebService(serviceName = "nombre_webservice")
+@WebService(serviceName = "nombre_WebService") Esta notación es muy 
+importante porque es el nombre que va a tener nuestro Web Service, 
+entonces cuando lo busquemos desde una clase "cliente", lo vamos a 
+llamar a través de este nombre.
+Dentro de nuestro nuevo Web Service podemos crear los métodos que 
+queramos.
+Al crear nuestro nuevo Web Service se crea también un nuevo 
+directorio/carpeta dentro de nuestro proyecto llamado "Web Services". 
+Entonces PARA DIFERENCIAR tenemos por un lado: Nuestro Paquete “ws” 
+que es donde se guarda/almacena el archivo Web Service o la 
+Clase .java
+Y por otro lado tenemos la nueva carpeta que se creo automáticamente 
+donde se guarda el Web Service con la ruta del WSDL para poder 
+VISUALIZAR los métodos del Web Service y realizar el Testeo del mismo.
+Probar o testear si funciona bien el Web Service.
+
+- Cuarto paso, una vez creado y probado el Web Service, debemos crear 
+un nuevo Proyecto Web(cliente) que pueda "Consumir" nuestro Web 
+Service.
+-->
+<html>
+    <head>
+        <title>Web Service Server</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>Pagina Principal Web Service Server</div>
+    </body>
+</html>

@@ -6,7 +6,17 @@
         <title>Facelet Title</title>
     </h:head>
     <h:body>
-        Hello from Facelets
+        <h1>Menu Principal</h1>
+        <hr />
+        
+        <h:form>
+            <ul>
+                <li> <h:commandButton value="Productos" action="productos"></h:commandButton> </li>
+                <li> <h:commandButton value="Servicios" action="servicios"></h:commandButton> </li>
+                <li> <h:commandButton value="Contactar" action="contactar"></h:commandButton> </li>
+            </ul>
+            <h:commandLink value="Mapa del sitio" action="mapa"></h:commandLink>
+        </h:form>
     </h:body>
 </html>
 

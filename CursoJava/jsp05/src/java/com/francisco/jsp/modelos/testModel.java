@@ -1,9 +1,9 @@
 //EJB, un EJB no es mas que una clase que nos va a permitir
-//enviar datos hacia el controlador(servlet) y ese controlador
-//a su vez va a mostrar esa informacion que nosotros le enviamos
+//enviar datos hacia el Controlador(Servlet) y ese Controlador
+//a su vez va a mostrar esa informacion, que nosotros le enviamos
 //desde el EJB en la vista(.jsp)
 
-//PROCESO DE CARGA DE BASE DE DATOS, AQUI
+//PROCESO DE CARGA DE BASE DE DATOS, AQUI...
 
 package com.francisco.jsp.modelos;
 
@@ -48,8 +48,5 @@ public class testModel {
     public void setSexo(String sexo) {
         this.sexo = sexo;
     }
-    
-    
-    
     
 }

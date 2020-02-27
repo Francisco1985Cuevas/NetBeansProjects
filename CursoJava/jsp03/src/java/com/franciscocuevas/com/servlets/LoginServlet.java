@@ -1,4 +1,6 @@
-
+/*
+    Servlet: LoginServlet
+*/
 package com.franciscocuevas.com.servlets;
 
 import java.io.IOException;
@@ -11,15 +13,6 @@ import javax.servlet.http.HttpServletResponse;
 
 public class LoginServlet extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -36,7 +29,10 @@ public class LoginServlet extends HttpServlet {
             out.println("<title>Servlet LoginServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet LoginServlet at " + request.getContextPath() + "</h1>");
+            //out.println("<h1>Servlet LoginServlet at " + request.getContextPath() + "</h1>");
+            
+            out.println("<h1>Hola desde el Servlet LoginServlet</h1>");
+            out.println("<br><a href=\"index.jsp\">Volver</a><br>");
             
             out.println("<p>Username " + username + "</p>");
             out.println("<p>Password " + password + "</p>");

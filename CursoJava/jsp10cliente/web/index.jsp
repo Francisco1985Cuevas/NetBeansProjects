@@ -16,6 +16,8 @@
     <body>
         <h1>index(cliente)Web Service desde Java EE!</h1>
         
+        <%-- Usando Scriptlet mostramos el resultado del
+        Web Service en esta pagina.--%>
         <p><%=request.getAttribute("mensaje") %></p>
     </body>
 </html>

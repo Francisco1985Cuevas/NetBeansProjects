@@ -1,5 +1,12 @@
-/*implementacion de nuestra clase, que va a ser utilizada
-como Web Service*/
+/*
+    Web Service: Servicio_Test.java
+
+implementacion de nuestra clase, que va a ser utilizada
+como Web Service.
+
+- En esta clase podemos tener todos los metodos que queramos.
+
+*/
 
 package ws;
 
