@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Practica de Tags JSF
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h = "http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Tags JSF</title>
+        <h:outputStylesheet library="css" name="bootstrap.min.css"/>
+    </h:head>
+    <h:body>
+        <p>JSF-Basic Tags</p>
+        <br />
+        <h:link value="Volver" outcome="index"/>
+        <br/>
+        <h:form>
+            <h:outputLabel value="Ingrese un texto" for="texto1"/>
+            <h:inputText id="texto1" />
+            <hr/>
+            <h:outputLabel value="Usuario" for="usuario"/>
+            <h:inputText id="usuario"  />
+            <h:outputLabel value="Contrasenha" for="contrasenha"/>
+            <h:inputSecret value="password"/>
+            <hr/>
+            
+            <h:inputTextarea rows="10" cols="100"/>
+            <hr/>
+            <h:outputLabel value="Checkbox" for="check1"/>
+            <h:selectBooleanCheckbox value="valor_enviado" id="chkRememberMe"/>
+            <hr/>
+            
+            <h:selectOneRadio value="#{userData.data}">
+                <f:selectItem itemValue="1" itemLabel="Item 1"/>
+                <f:selectItem itemValue="2" itemLabel="Item 2"/>
+            </h:selectOneRadio>
+        </h:form>
+    </h:body>
+</html>

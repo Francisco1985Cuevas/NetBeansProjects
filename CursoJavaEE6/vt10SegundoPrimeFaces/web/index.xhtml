@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <body>
+
+        <ui:composition template="./template.xhtml">
+
+            <ui:define name="top">
+                <h2>Datos Personalizados del Alumno</h2>
+            </ui:define>
+
+            <ui:define name="content">
+                <h:form>
+                    <p:messages />
+                    <p:panel header="Escribir informacion Alumno">
+                        <h:panelGrid columns="2">
+                            <h:outputLabel for="nombre" value="Nombre" style="requiredLbl"/>
+                            <h:inputText id="nombre" label="Nombre" value="#{alumno.nombre}" required="true"/>
+                            
+                            <h:outputLabel for="primerApellido" value="Primer Apellido" style="requiredLbl"/>
+                            <h:inputText id="primerApellido" label="Primer Apellido" value="#{alumno.primerApellido}" required="true"/>
+                            
+                            <h:outputLabel for="segundoApellido" value="Segundo Apellido" style="requiredLbl"/>
+                            <h:inputText id="segundoApellido" label="segundoApellido" value="#{alumno.segundoApellido}" required="true"/>
+                            
+                            <h:outputLabel for="fechaNacimiento" value="Fecha de Nacimiento" style="requiredLbl"/>
+                            <p:calendar id="fechaNacimiento" value="#{alumno.fechaNacimiento}" showOn="button" navigator="true"/>
+                            
+                            <h:panelGroup/>
+                            <h:commandButton id="enviar" value="Enviar" action="confirmacion" />
+                        </h:panelGrid>
+                    </p:panel>
+                </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
