@@ -19,13 +19,14 @@ import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
-/**
- *
- * @author francisco
- */
+
 @Entity
-@Table(name = "ALUMNO")
+@Table(name = "ALUMNO") /*Esta Anotacion indica la tabla que Mapea, a la que esta Asignada nuestra Entidad*/
 @XmlRootElement
+
+/*Esta anotacion para la tabla contiene un atributo @NamedQuery para cada uno de los campos que forma esa tabla
+tambien vemos el uso de una consulta JPQL el lenguaje muy similar
+a SQL que utilizamos para llevar a cabo las consultas.*/
 @NamedQueries({
     @NamedQuery(name = "Alumno.findAll", query = "SELECT a FROM Alumno a")
     , @NamedQuery(name = "Alumno.findByAlumnoId", query = "SELECT a FROM Alumno a WHERE a.alumnoId = :alumnoId")
@@ -54,6 +55,8 @@ public class Alumno implements Serializable {
     @Size(max = 255)
     @Column(name = "EMAIL")
     private String email;
+    
+    /*esta anotacion define las relaciones entre las entidades*/
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "alumnoId")
     private Collection<Direccion> direccionCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "alumnoId")

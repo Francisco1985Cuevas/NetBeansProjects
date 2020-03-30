@@ -18,20 +18,20 @@
             <p:layout fullPage="true">
 
                 <p:layoutUnit position="north" size="100" resizable="true" closable="true" collapsible="true">
-                    Div Header
+                    Header
                 </p:layoutUnit>
 
                 <p:layoutUnit position="south" size="100" closable="true" collapsible="true">
-                    Div Footer
+                    Footer
                 </p:layoutUnit>
 
                 <p:layoutUnit position="west" size="175" header="Left" collapsible="true">
                     <p:menu>
                         <p:submenu label="Resources">
-                            <p:menuitem value="Demo" url="http://www.primefaces.org/showcase-labs/ui/home.jsf" />
-                            <p:menuitem value="Documentation" url="http://www.primefaces.org/documentation.html" />
-                            <p:menuitem value="Forum" url="http://forum.primefaces.org/" />
-                            <p:menuitem value="Themes" url="http://www.primefaces.org/themes.html" />
+                            <p:menuitem value="Demo" url="#" />
+                            <p:menuitem value="Documentation" url="#" />
+                            <p:menuitem value="Forum" url="#" />
+                            <p:menuitem value="Themes" url="#" />
 
                         </p:submenu>
 
@@ -40,16 +40,16 @@
 
                 <p:layoutUnit position="center">
                     Welcome to PrimeFaces
-                    
-                    
-                    <h:panelGrid columns="1" cellpadding="5">
-                        <p:commandButton value="Basic" type="button" onclick="PF('dlg1').show();" />
-                    </h:panelGrid>
-                    <p:dialog header="Basic Dialog" widgetVar="dlg1" minHeight="40">
-                        <h:outputText value="Resistance to PrimeFaces is futile!" />
-                    </p:dialog>
-                    
-                    
+
+                    <h:form>
+                        <h:panelGrid columns="4" cellpadding="5">
+                            <h:outputLabel for="name" value="Name:" style="font-weight:bold" />
+                            <p:inputText id="name" value="#{basicView.text}" />
+                            <p:commandButton value="Submit" update="display" icon="pi pi-check" />
+                            <h:outputText id="display" value="#{basicView.text}" />
+                        </h:panelGrid>
+                    </h:form>
+
                 </p:layoutUnit>
 
             </p:layout>
