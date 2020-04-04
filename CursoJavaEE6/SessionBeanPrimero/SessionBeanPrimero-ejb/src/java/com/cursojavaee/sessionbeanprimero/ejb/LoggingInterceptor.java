@@ -7,8 +7,10 @@ import javax.interceptor.InvocationContext;
 
 
 public class LoggingInterceptor {
-    
+    //Interceptor
     @AroundInvoke
+    //Interceptor
+    
     public Object logMethodCall(
             InvocationContext invocationContext )
     throws Exception{

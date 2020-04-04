@@ -1,17 +1,19 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ y es esta clase abstracta la que contiene los metodos que nos
+permiten ejecutar las operaciones CRUD
  */
 package com.cursojavaee.sessionbeans;
 
 import java.util.List;
 import javax.persistence.EntityManager;
 
-/**
- *
- * @author francisco
- */
+//se limita a ser esto, practicamente una "fachada" para el 
+//EntityManager, envuelve las llamadas dentro de un "Bean de Session"
+//lo que nos permite contar con todas sus ventajas, como el manejo
+//de "Transacciones", codigo distribuido, etc.,
+
+//incluye metodos como el metodo create, edit, remove, find,
+//findAll, etc., 
 public abstract class AbstractFacade<T> {
 
     private Class<T> entityClass;

@@ -13,8 +13,14 @@ import javax.interceptor.Interceptors;
 @Stateless
 public class Repetir implements RepetirRemote {
     
+    //Interceptors, indicamos el INTERCEPTOR que queremos usar
     @Interceptors({LoggingInterceptor.class})
+    //Interceptors
+    
+    //Transacciones
     @TransactionAttribute(TransactionAttributeType.REQUIRES_NEW)
+    //Transacciones
+    
     @Override
     public String repetir(String repitiendo) {
         //simplemente retornamos un String

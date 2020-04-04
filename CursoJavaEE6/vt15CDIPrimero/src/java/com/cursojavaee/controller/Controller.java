@@ -1,4 +1,6 @@
-
+/*
+@Named Bean: Controller.java
+*/
 package com.cursojavaee.controller;
 
 import com.cursojavaee.model.Cliente;
@@ -10,6 +12,7 @@ import javax.inject.Named;
 @RequestScoped
 public class Controller {
     
+    //instancia de la Clase Cliente
     @Inject
     private Cliente cliente;
     
@@ -22,6 +25,9 @@ public class Controller {
     }
     
     public String navegarAConfirmacion(){
+        //este metodo es invocado cuando el usuario pulsa en 
+        //enviar datos del formulario(index.xhtml).
+        
         //en una aplicacion real, deberiamos salvar los
         //nuevos clientes a la base de datos aqui.
         return "confirmacion";

@@ -1,3 +1,7 @@
+/*
+se crea el primer "bean" para el proyecto.
+@Named Bean: Cliente.java
+*/
 package com.cursojavaee.model;
 
 import java.io.Serializable;
