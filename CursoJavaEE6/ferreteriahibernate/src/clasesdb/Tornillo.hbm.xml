@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 18/04/2020 03:22:18 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="clasesdb.Tornillo" table="tornillo" schema="ferreteria" optimistic-lock="version">
+        <id name="idtornillo" type="int">
+            <column name="idtornillo" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="fabricante" class="clasesdb.Fabricante" fetch="select">
+            <column name="idfabricante_fabricante" not-null="true" />
+        </many-to-one>
+        <property name="cabeza" type="string">
+            <column name="cabeza" length="50" />
+        </property>
+        <property name="cuello" type="java.lang.Integer">
+            <column name="cuello" />
+        </property>
+        <property name="diametro" type="java.lang.Integer">
+            <column name="diametro" />
+        </property>
+        <property name="tiporosca" type="string">
+            <column name="tiporosca" length="75" />
+        </property>
+        <property name="paso" type="java.lang.Short">
+            <column name="paso" />
+        </property>
+        <property name="longitud" type="java.lang.Integer">
+            <column name="longitud" />
+        </property>
+        <property name="codigo" type="string">
+            <column name="codigo" length="10" />
+        </property>
+        <set name="clientes" table="many_tornillo_has_many_cliente" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="idtornillo_tornillo" not-null="true" />
+            </key>
+            <many-to-many entity-name="clasesdb.Cliente">
+                <column name="idcliente_cliente" not-null="true" />
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

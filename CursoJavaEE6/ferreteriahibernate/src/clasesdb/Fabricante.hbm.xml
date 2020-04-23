@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 18/04/2020 03:22:18 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="clasesdb.Fabricante" table="fabricante" schema="ferreteria" optimistic-lock="version">
+        <id name="idfabricante" type="int">
+            <column name="idfabricante" />
+            <generator class="assigned" />
+        </id>
+        <property name="nombre" type="string">
+            <column name="nombre" length="150" />
+        </property>
+        <property name="direccion" type="string">
+            <column name="direccion" length="300" />
+        </property>
+        <property name="telefono" type="string">
+            <column name="telefono" length="9" />
+        </property>
+        <property name="fax" type="string">
+            <column name="fax" length="9" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="150" />
+        </property>
+        <property name="contacto" type="string">
+            <column name="contacto" length="150" />
+        </property>
+        <set name="tornillos" table="tornillo" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idfabricante_fabricante" not-null="true" />
+            </key>
+            <one-to-many class="clasesdb.Tornillo" />
+        </set>
+    </class>
+</hibernate-mapping>

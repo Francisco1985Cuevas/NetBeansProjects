@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="TornilloCreateDlg" widgetVar="TornilloCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateTornilloTitle}">
+            <h:form id="TornilloCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{tornilloController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateTornilloLabel_idtornillo}" for="idtornillo" />
+                        <p:inputText id="idtornillo" value="#{tornilloController.selected.idtornillo}" title="#{bundle.CreateTornilloTitle_idtornillo}" required="true" requiredMessage="#{bundle.CreateTornilloRequiredMessage_idtornillo}"/>
+                        <p:outputLabel value="#{bundle.CreateTornilloLabel_cabeza}" for="cabeza" />
+                        <p:inputText id="cabeza" value="#{tornilloController.selected.cabeza}" title="#{bundle.CreateTornilloTitle_cabeza}" />
+                        <p:outputLabel value="#{bundle.CreateTornilloLabel_cuello}" for="cuello" />
+                        <p:inputText id="cuello" value="#{tornilloController.selected.cuello}" title="#{bundle.CreateTornilloTitle_cuello}" />
+                        <p:outputLabel value="#{bundle.CreateTornilloLabel_diametro}" for="diametro" />
+                        <p:inputText id="diametro" value="#{tornilloController.selected.diametro}" title="#{bundle.CreateTornilloTitle_diametro}" />
+                        <p:outputLabel value="#{bundle.CreateTornilloLabel_tiporosca}" for="tiporosca" />
+                        <p:inputText id="tiporosca" value="#{tornilloController.selected.tiporosca}" title="#{bundle.CreateTornilloTitle_tiporosca}" />
+                        <p:outputLabel value="#{bundle.CreateTornilloLabel_paso}" for="paso" />
+                        <p:inputText id="paso" value="#{tornilloController.selected.paso}" title="#{bundle.CreateTornilloTitle_paso}" />
+                        <p:outputLabel value="#{bundle.CreateTornilloLabel_longitud}" for="longitud" />
+                        <p:inputText id="longitud" value="#{tornilloController.selected.longitud}" title="#{bundle.CreateTornilloTitle_longitud}" />
+                        <p:outputLabel value="#{bundle.CreateTornilloLabel_idfabricanteFabricante}" for="idfabricanteFabricante" />
+                        <p:inputText id="idfabricanteFabricante" value="#{tornilloController.selected.idfabricanteFabricante}" title="#{bundle.CreateTornilloTitle_idfabricanteFabricante}" required="true" requiredMessage="#{bundle.CreateTornilloRequiredMessage_idfabricanteFabricante}"/>
+                        <p:outputLabel value="#{bundle.CreateTornilloLabel_codigo}" for="codigo" />
+                        <p:inputText id="codigo" value="#{tornilloController.selected.codigo}" title="#{bundle.CreateTornilloTitle_codigo}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{tornilloController.create}" value="#{bundle.Save}" update="display,:TornilloListForm:datalist,:growl" oncomplete="handleSubmit(args,'TornilloCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="TornilloCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

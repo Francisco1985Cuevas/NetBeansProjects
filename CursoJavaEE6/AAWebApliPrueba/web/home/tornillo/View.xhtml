@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="TornilloViewDlg" widgetVar="TornilloViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewTornilloTitle}">
+            <h:form id="TornilloViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{tornilloController.selected != null}">
+                        <h:outputText value="#{bundle.ViewTornilloLabel_idtornillo}"/>
+                        <h:outputText value="#{tornilloController.selected.idtornillo}" title="#{bundle.ViewTornilloTitle_idtornillo}"/>
+                        <h:outputText value="#{bundle.ViewTornilloLabel_cabeza}"/>
+                        <h:outputText value="#{tornilloController.selected.cabeza}" title="#{bundle.ViewTornilloTitle_cabeza}"/>
+                        <h:outputText value="#{bundle.ViewTornilloLabel_cuello}"/>
+                        <h:outputText value="#{tornilloController.selected.cuello}" title="#{bundle.ViewTornilloTitle_cuello}"/>
+                        <h:outputText value="#{bundle.ViewTornilloLabel_diametro}"/>
+                        <h:outputText value="#{tornilloController.selected.diametro}" title="#{bundle.ViewTornilloTitle_diametro}"/>
+                        <h:outputText value="#{bundle.ViewTornilloLabel_tiporosca}"/>
+                        <h:outputText value="#{tornilloController.selected.tiporosca}" title="#{bundle.ViewTornilloTitle_tiporosca}"/>
+                        <h:outputText value="#{bundle.ViewTornilloLabel_paso}"/>
+                        <h:outputText value="#{tornilloController.selected.paso}" title="#{bundle.ViewTornilloTitle_paso}"/>
+                        <h:outputText value="#{bundle.ViewTornilloLabel_longitud}"/>
+                        <h:outputText value="#{tornilloController.selected.longitud}" title="#{bundle.ViewTornilloTitle_longitud}"/>
+                        <h:outputText value="#{bundle.ViewTornilloLabel_idfabricanteFabricante}"/>
+                        <h:outputText value="#{tornilloController.selected.idfabricanteFabricante}" title="#{bundle.ViewTornilloTitle_idfabricanteFabricante}"/>
+                        <h:outputText value="#{bundle.ViewTornilloLabel_codigo}"/>
+                        <h:outputText value="#{tornilloController.selected.codigo}" title="#{bundle.ViewTornilloTitle_codigo}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="TornilloViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="FabricanteEditDlg" widgetVar="FabricanteEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditFabricanteTitle}">
+            <h:form id="FabricanteEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{fabricanteController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditFabricanteLabel_idfabricante}" for="idfabricante" />
+                        <p:inputText id="idfabricante" value="#{fabricanteController.selected.idfabricante}" title="#{bundle.EditFabricanteTitle_idfabricante}" required="true" requiredMessage="#{bundle.EditFabricanteRequiredMessage_idfabricante}"/>
+                        <p:outputLabel value="#{bundle.EditFabricanteLabel_nombre}" for="nombre" />
+                        <p:inputText id="nombre" value="#{fabricanteController.selected.nombre}" title="#{bundle.EditFabricanteTitle_nombre}" />
+                        <p:outputLabel value="#{bundle.EditFabricanteLabel_direccion}" for="direccion" />
+                        <p:inputText id="direccion" value="#{fabricanteController.selected.direccion}" title="#{bundle.EditFabricanteTitle_direccion}" />
+                        <p:outputLabel value="#{bundle.EditFabricanteLabel_telefono}" for="telefono" />
+                        <p:inputText id="telefono" value="#{fabricanteController.selected.telefono}" title="#{bundle.EditFabricanteTitle_telefono}" />
+                        <p:outputLabel value="#{bundle.EditFabricanteLabel_fax}" for="fax" />
+                        <p:inputText id="fax" value="#{fabricanteController.selected.fax}" title="#{bundle.EditFabricanteTitle_fax}" />
+                        <p:outputLabel value="#{bundle.EditFabricanteLabel_email}" for="email" />
+                        <p:inputText id="email" value="#{fabricanteController.selected.email}" title="#{bundle.EditFabricanteTitle_email}" />
+                        <p:outputLabel value="#{bundle.EditFabricanteLabel_contacto}" for="contacto" />
+                        <p:inputText id="contacto" value="#{fabricanteController.selected.contacto}" title="#{bundle.EditFabricanteTitle_contacto}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{fabricanteController.update}" value="#{bundle.Save}" update="display,:FabricanteListForm:datalist,:growl" oncomplete="handleSubmit(args, 'FabricanteEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="FabricanteEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

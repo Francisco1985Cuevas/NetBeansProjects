@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="TornillosxclienteCreateDlg" widgetVar="TornillosxclienteCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateTornillosxclienteTitle}">
+            <h:form id="TornillosxclienteCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{tornillosxclienteController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateTornillosxclienteLabel_tornillosxclientePK_idtornilloTornillo}" for="tornillosxclientePK_idtornilloTornillo" />
+                        <p:inputText id="tornillosxclientePK_idtornilloTornillo" value="#{tornillosxclienteController.selected.tornillosxclientePK.idtornilloTornillo}" title="#{bundle.CreateTornillosxclienteTitle_tornillosxclientePK_idtornilloTornillo}" required="true" requiredMessage="#{bundle.CreateTornillosxclienteRequiredMessage_tornillosxclientePK_idtornilloTornillo}"/>
+                        <p:outputLabel value="#{bundle.CreateTornillosxclienteLabel_tornillosxclientePK_idclienteCliente}" for="tornillosxclientePK_idclienteCliente" />
+                        <p:inputText id="tornillosxclientePK_idclienteCliente" value="#{tornillosxclienteController.selected.tornillosxclientePK.idclienteCliente}" title="#{bundle.CreateTornillosxclienteTitle_tornillosxclientePK_idclienteCliente}" required="true" requiredMessage="#{bundle.CreateTornillosxclienteRequiredMessage_tornillosxclientePK_idclienteCliente}"/>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{tornillosxclienteController.create}" value="#{bundle.Save}" update="display,:TornillosxclienteListForm:datalist,:growl" oncomplete="handleSubmit(args,'TornillosxclienteCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="TornillosxclienteCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

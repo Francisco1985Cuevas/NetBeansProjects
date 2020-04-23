@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditCiudadesTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditCiudadesLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{ciudadesController.selected.id}" title="#{bundle.EditCiudadesTitle_id}" required="true" requiredMessage="#{bundle.EditCiudadesRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.EditCiudadesLabel_nombre}" for="nombre" />
+                    <h:inputText id="nombre" value="#{ciudadesController.selected.nombre}" title="#{bundle.EditCiudadesTitle_nombre}" required="true" requiredMessage="#{bundle.EditCiudadesRequiredMessage_nombre}"/>
+                    <h:outputLabel value="#{bundle.EditCiudadesLabel_pais}" for="pais" />
+                    <h:selectOneMenu id="pais" value="#{ciudadesController.selected.pais}" title="#{bundle.EditCiudadesTitle_pais}" required="true" requiredMessage="#{bundle.EditCiudadesRequiredMessage_pais}">
+                        <f:selectItems value="#{paisesController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{ciudadesController.update}" value="#{bundle.EditCiudadesSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditCiudadesViewLink}"/>
+                <br />
+                <h:commandLink action="#{ciudadesController.prepareList}" value="#{bundle.EditCiudadesShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditCiudadesIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
