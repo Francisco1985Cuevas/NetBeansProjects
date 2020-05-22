@@ -28,7 +28,6 @@ class Juego{
             numeroEscrito = miScanner.nextInt();
             
             numIntentos++;
-            
         }
         
         out.print("Has ganado después de "+numIntentos+" intentos.");

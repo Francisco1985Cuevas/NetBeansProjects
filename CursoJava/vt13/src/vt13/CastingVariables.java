@@ -2,6 +2,7 @@ package vt13;
 
 class CastingVariables{
     public static void main(String args[]){
+        //ejemplo de uso de cast-convert de variables
         
         // modo explicito, dentro de la operacion convertimos a float
         double x = 56.01;

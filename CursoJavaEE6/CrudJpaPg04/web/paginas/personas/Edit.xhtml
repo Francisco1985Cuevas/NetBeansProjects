@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditPersonasTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditPersonasLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{personasController.selected.id}" title="#{bundle.EditPersonasTitle_id}" required="true" requiredMessage="#{bundle.EditPersonasRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.EditPersonasLabel_nombres}" for="nombres" />
+                    <h:inputText id="nombres" value="#{personasController.selected.nombres}" title="#{bundle.EditPersonasTitle_nombres}" />
+                    <h:outputLabel value="#{bundle.EditPersonasLabel_apellidos}" for="apellidos" />
+                    <h:inputText id="apellidos" value="#{personasController.selected.apellidos}" title="#{bundle.EditPersonasTitle_apellidos}" />
+                    <h:outputLabel value="#{bundle.EditPersonasLabel_fechaNacimiento}" for="fechaNacimiento" />
+                    <h:inputText id="fechaNacimiento" value="#{personasController.selected.fechaNacimiento}" title="#{bundle.EditPersonasTitle_fechaNacimiento}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditPersonasLabel_nroDocumento}" for="nroDocumento" />
+                    <h:inputText id="nroDocumento" value="#{personasController.selected.nroDocumento}" title="#{bundle.EditPersonasTitle_nroDocumento}" />
+                    <h:outputLabel value="#{bundle.EditPersonasLabel_sexo}" for="sexo" />
+                    <h:inputText id="sexo" value="#{personasController.selected.sexo}" title="#{bundle.EditPersonasTitle_sexo}" />
+                    <h:outputLabel value="#{bundle.EditPersonasLabel_estadoCivil}" for="estadoCivil" />
+                    <h:inputText id="estadoCivil" value="#{personasController.selected.estadoCivil}" title="#{bundle.EditPersonasTitle_estadoCivil}" />
+                    <h:outputLabel value="#{bundle.EditPersonasLabel_tipoPersona}" for="tipoPersona" />
+                    <h:inputText id="tipoPersona" value="#{personasController.selected.tipoPersona}" title="#{bundle.EditPersonasTitle_tipoPersona}" />
+                    <h:outputLabel value="#{bundle.EditPersonasLabel_idCiudades}" for="idCiudades" />
+                    <h:selectOneMenu id="idCiudades" value="#{personasController.selected.idCiudades}" title="#{bundle.EditPersonasTitle_idCiudades}" required="true" requiredMessage="#{bundle.EditPersonasRequiredMessage_idCiudades}">
+                        <f:selectItems value="#{ciudadesController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{personasController.update}" value="#{bundle.EditPersonasSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditPersonasViewLink}"/>
+                <br />
+                <h:commandLink action="#{personasController.prepareList}" value="#{bundle.EditPersonasShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditPersonasIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

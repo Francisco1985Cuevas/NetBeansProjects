@@ -1,5 +1,8 @@
 class Equals{
     public static void main(String[] args){
+        
+        //ejemplo de uso del metodo equals()
+        
         String respuesta = "amarillo";
         //String resultado = "verde";
         String resultado = "amarillo";

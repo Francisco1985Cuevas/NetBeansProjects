@@ -6,6 +6,6 @@ public class SegundoPrograma {
         int b = 10;
         int suma;
         suma = a+b;
-        System.out.println("la suma es: "+suma);
+        System.out.println("La Suma es: "+suma);
     }
 }

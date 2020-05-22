@@ -2,6 +2,9 @@ package vt8;
 
 class ContinueLoop{
     public static void main(String args[]){
+        
+        //ejemplo de uso de continue en un loop
+        
         int index = 0;
         while(index <= 1000){
             index = index +5;

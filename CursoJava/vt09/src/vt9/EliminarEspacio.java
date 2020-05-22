@@ -5,6 +5,7 @@ public class EliminarEspacio{
         
         String citaDiaria = "La educacion consiste en enseñar a los hombres no lo que deben pensar";
         char convertir[] = citaDiaria.toCharArray();
+        
         for(int dex = 0; dex < convertir.length; dex++){
             
             char current = convertir[dex];

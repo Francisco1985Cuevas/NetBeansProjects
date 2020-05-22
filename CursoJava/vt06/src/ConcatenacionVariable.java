@@ -1,6 +1,8 @@
 class ConcatenacionVariable{
     public static void main(String[] args){
         
+        //concatenar variables en Java.
+        
         /*
         //Ejemplo 1
         int numero = 143;
